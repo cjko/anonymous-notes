@@ -296,10 +296,10 @@ var HttpService = (function () {
     }
     // TODO: Method to send GET request to server
     HttpService.prototype.addNote = function (noteObj) {
-        return this._http.post('http://localhost:8000/notes', noteObj).map(function (response) { return response.json(); }).toPromise();
+        return this._http.post('./notes', noteObj).map(function (response) { return response.json(); }).toPromise();
     };
     HttpService.prototype.getNotes = function () {
-        return this._http.get('http://localhost:8000/notes').map(function (response) { return response.json(); }).toPromise();
+        return this._http.get('./notes').map(function (response) { return response.json(); }).toPromise();
     };
     return HttpService;
 }());
