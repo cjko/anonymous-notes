@@ -52,7 +52,7 @@ app.post('/notes', function(req, res) {
 })
 
 app.all("*", (req,res,next)=> {
-    res.sendfile(path.resolve('.public/dist/index.html'))
+    res.sendfile(path.resolve('./public/dist/index.html'))
 })
 
 // Setting our Server to Listen on Port: 8000
