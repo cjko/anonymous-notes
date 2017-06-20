@@ -9,11 +9,11 @@ export class HttpService {
 
   // TODO: Method to send GET request to server
   addNote(noteObj) {
-  	return this._http.post('./notes', noteObj).map(response=>response.json()).toPromise()
+  	return this._http.post('/notes', noteObj).map(response=>response.json()).toPromise()
   }
 
   getNotes() {
-  	return this._http.get('./notes').map(response=>response.json()).toPromise()
+  	return this._http.get('/notes').map(response=>response.json()).toPromise()
   }
 
 }
