@@ -24,7 +24,6 @@ var path = require('path');
 // Setting our Static Folder Directory
 app.use(express.static(path.join(__dirname, './public/dist')));
 
-
 app.get('/notes', function(req, res) {
     // console.log(Note.find({}))
     sort = {'_id': -1}
@@ -50,6 +49,10 @@ app.post('/notes', function(req, res) {
         }
     })
     return res.json(note)
+})
+
+app.all("*", (req,res,next)=> {
+    res.sendfile(path.resolve('.public/dist/index.html'))
 })
 
 // Setting our Server to Listen on Port: 8000
